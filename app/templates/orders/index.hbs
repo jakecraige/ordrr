@@ -24,7 +24,7 @@
     </div>
     <ul class="ui-table-view border-top">
       {{#each readyOrders}}
-        <li>
+        <li {{action 'pickUp' this}}>
           <p>
             {{description}}
             <span class="right">

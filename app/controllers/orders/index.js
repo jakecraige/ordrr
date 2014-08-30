@@ -13,6 +13,9 @@ export default Ember.ArrayController.extend({
       this.transitionToRouteAnimated('orders.manage', {
         main: 'slideLeft'
       });
+    },
+    pickUp: function(order) {
+      order.destroyRecord();
     }
   }
 });
