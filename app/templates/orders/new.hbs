@@ -1,0 +1,29 @@
+<header>
+  <div class="left-button" {{action 'back'}}>
+    Back
+  </div>
+  <h1>
+    New Order
+  </h1>
+  <div class="right-button" {{action 'submit'}}>
+    Create
+  </div>
+</header>
+
+<div id="main">
+  <div id="scrollable">
+    <div class="content-padded">
+      <form {{action 'submit' on='submit'}}>
+        <label>
+          What do you want?
+        </label>
+        {{input value=description placeholder="describe what you want"}}
+
+        <label>
+          Who are you?
+        </label>
+        {{input value=receiver placeholder="your name"}}
+      </form>
+    </div>
+  </div>
+</div>
