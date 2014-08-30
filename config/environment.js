@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     environment: environment,
     baseURL: '/',
-    locationType: 'auto',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -15,6 +15,12 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    cordova: {
+      rebuildOnChange: false,
+      rebuildAsync: false,
+      emulate: false
     }
   };
 
@@ -24,14 +30,24 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
+
+    ENV.apiUrl = 'http://localhost:3000/api/v1';
+    ENV.development = true;
   }
 
   if (environment === 'test') {
-    ENV.baseURL = '/'; // Testem prefers this...
+
   }
 
-  if (environment === 'production') {
+  if (environment === 'staging') {
+    ENV.apiUrl = 'http://ordrr-staging.herokuapp.com/api/v1';
+    ENV.staging = true;
+  }
 
+
+  if (environment === 'production') {
+    ENV.apiUrl = 'http://ordrr.herokuapp.com/api/v1';
+    ENV.production = true;
   }
 
   return ENV;
