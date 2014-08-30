@@ -20,7 +20,7 @@
       </p>
     </div>
     <ul class="ui-table-view border-top">
-      {{#each}}
+      {{#each readyOrders}}
         <li>
           <p>
             {{description}}
@@ -37,5 +37,34 @@
         </li>
       {{/each}}
     </ul>
+
+    {{#if pendingOrders.length}}
+      <div class="content-padded">
+        <h2>
+          Pending Orders
+        </h2>
+        <p>
+          Your order has been received and should be ready soon.
+        </p>
+      </div>
+      <ul class="ui-table-view border-top">
+        {{#each pendingOrders}}
+          <li>
+            <p>
+              {{description}}
+              <span class="right">
+                for {{receiver}}
+              </span>
+            </p>
+          </li>
+        {{else}}
+          <li>
+            <p>
+              No orders are ready yet. Be patient!
+            </p>
+          </li>
+        {{/each}}
+      </ul>
+    {{/if}}
   </div>
 </div>

@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.ArrayController.extend({
+  readyOrders: Ember.computed.filterBy('model', 'ready', true),
+  pendingOrders: Ember.computed.filterBy('model', 'ready', false),
   actions: {
     create: function() {
       this.transitionToRouteAnimated('orders.new', {
