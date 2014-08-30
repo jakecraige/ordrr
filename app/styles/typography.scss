@@ -1,0 +1,24 @@
+@import 'variables';
+@import url(http://fonts.googleapis.com/css?family=Oswald|Merriweather:400,400italic,300);
+
+$oswald: 'Oswald', sans-serif;
+$merriweather: 'Merriweather', serif;
+
+html, body, p, ul, li, button, select, textarea, input, h1, h2, h3, h4, h5, button, .button, div {
+  color: $text-color;
+}
+
+h1, h2, h3, h4, button {
+  font-family: $oswald;
+  color: $orange;
+}
+
+a {
+  color: $link-color;
+}
+
+div, li, p, input, label {
+  font-family: $merriweather;
+  font-size: 1.3rem;
+  line-height: 1.4rem;
+}

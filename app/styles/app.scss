@@ -1,3 +1,9 @@
+@import 'variables';
+@import 'typography';
+@import 'utils';
+@import 'ios';
+@import 'forms';
+
 * {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-tap-highlight-color: transparent;
@@ -13,30 +19,46 @@
 html {
   // http://gregrickaby.com/using-the-golden-ratio-and-rems/
   font-size: 62.5%;
+  background-color: $bg-color;
 }
 
 body {
   margin: 0;
 }
 
-.modal {
-  position: relative;
-  margin: 45% auto;
-  width: 80%;
-  padding: 2rem 1rem;
-  .close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 1rem 1rem 1.5rem 2rem;
+#main {
+  position: absolute;
+  top: 65px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+#scrollable {
+  height: 101%;
+}
+
+button {
+  -webkit-appearance: none;
+  width: 100%;
+  padding: 10px;
+  background: $orange;
+  border: none;
+  border-radius: 4px;
+  color: $black;
+  font-size: 1.8rem;
+}
+
+.orders-list {
+  li {
+    background: $red;
   }
 }
 
-.overlay {
-  height: 100%;
+.spacer {
+  display: block;
+  height: 40px;
   width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgba(0,0,0,0.8);
 }
