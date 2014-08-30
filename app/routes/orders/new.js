@@ -6,5 +6,10 @@ export default Ember.Route.extend({
       description: '',
       receiver: ''
     });
+  },
+  deactivate: function() {
+    if(this.get('controller.model.isNew')) {
+      this.get('controller.model').deleteRecord();
+    }
   }
 });
