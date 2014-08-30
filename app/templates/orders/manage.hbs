@@ -1,0 +1,36 @@
+<header>
+  <div class="left-button" {{action 'back'}}>
+    Back
+  </div>
+  <h1>
+    Pending Orders
+  </h1>
+</header>
+
+<div id="main" class="orders-list">
+  <div id="scrollable">
+    <div class="content-padded">
+      <p>
+        Tap on the order to mark it as ready.
+      </p>
+    </div>
+    <ul class="ui-table-view border-top">
+      {{#each}}
+        <li {{action 'ready' this}}>
+          <p>
+            {{description}}
+            <span class="right">
+              for {{receiver}}
+            </span>
+          </p>
+        </li>
+      {{else}}
+        <li>
+          <p>
+            No orders are pending. Be patient!
+          </p>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

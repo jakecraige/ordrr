@@ -9,5 +9,10 @@ export default Ember.ArrayController.extend({
         main: 'slideLeft'
       });
     },
+    manage: function() {
+      this.transitionToRouteAnimated('orders.manage', {
+        main: 'slideLeft'
+      });
+    }
   }
 });
