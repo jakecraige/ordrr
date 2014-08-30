@@ -1,0 +1,36 @@
+<header>
+  <h1>
+    Ordrr
+  </h1>
+</header>
+
+<div id="main" class="orders-list">
+  <div id="scrollable">
+    <div class="content-padded">
+      <h2>
+        Ready - Come and get em!
+      </h2>
+      <p>
+        Tap on your order to mark it as picked up.
+      </p>
+    </div>
+    <ul class="ui-table-view border-top">
+      {{#each}}
+        <li>
+          <p>
+            {{description}}
+            <span class="right">
+              for {{receiver}}
+            </span>
+          </p>
+        </li>
+      {{else}}
+        <li>
+          <p>
+            No orders are ready yet. Be patient!
+          </p>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
